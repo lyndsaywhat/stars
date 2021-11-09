@@ -63,10 +63,6 @@ cusps within 1/60 of a degree may not be accurate; that is the degree of precisi
 
 only sidereal calculations with the Placidus house system are provided. Future updates may implement tropical astrology and other house systems, but this is by no means guaranteed.
 
-Translation
-----
-i plan to do a russian translation at some point, but right now stars is only available in english. i have, however, made everything extremely localizable - all of the text output by the program except for the wiki pages is located in stars/include/starsl10n.h, and changing the preprocessor definitions there and the contents (and names, if you wish) of the pages in stars/info/* is all you need to do to translate the program for users. everything is in runes so you shouldn't have issues with encoding, even if you translate into something a bit "out there." so if you like the program and know another language besides english, i would love translation contributions!
-
 Contact
 ----
 patches (and inquiries, if you've double checked every information source and can't find an answer) can be emailed to lyndsay@vivaldi.net.
