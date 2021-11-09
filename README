@@ -1,0 +1,72 @@
+IN PROGRESS NOT PRODUCTION READY DO NOT SEND PRS OR YELL AT ME FOR BAD CODE
+
+About stars & libstars
+------
+stars is a library and program for 9front providing functions to do with the stars. stars the program provides astrological functions, with 4 modes:
+- planet mode: provide raw information about a certain planet on a certain date
+- profile mode: provides an astrological birth chart for a person (currently it does not produce an actual visual birth chart but it will tell you about what planet is in which sign, house information, etc. - all the main information a birth chart conveys)
+- horoscope mode: provide current planetary transits of relevance to a profile and gives basic non-personalized horoscopes
+- wiki mode: give information about a particular topic, which can technically be about anything in the library implementation but in practice all the topics are related to astrology
+
+libstars provides additional functions of relevance to both astronomers and astrologers. although it focuses more on the latter, an astronomy program based on libstars is certainly a possible use case (you may want to see astro(1) as well for astronomy purposes).
+
+Installation/compilation
+----
+running
+	mk && mk install
+in the source directory should suffice. this will install libstars as a shared library in /lib and stars as a program in /bin. if you just want the library in order to program something else,
+	mk libstars
+will be fine.
+
+Outside 9front
+----
+stars is meant to provide a native, network-independent astrology interface for 9front - it is not the best program for astrology, it is a plan 9 program for astrology. there is certainly more robust software out there which can run on macOS or linux or, god forbid, windows. 
+
+if you cannot be dissuaded from using stars and you are on a supported unix environment, you can install plan 9 from user space: https://9fans.github.io/plan9port/. stars can then be built using the ported mk. i test it on linux only; if you use another supported os and it doesn't work you will need to fix it yourself. if you use windows you are out of luck.
+
+also keep in mind that vanilla plan 9 is unmaintained and deprecated. the software is written for 9front and no support for vanilla (or 9legacy) is provided. if you use regular plan 9 and want to send a patch that provides support, that's great! i have nothing against providing compatibility, it's just not a priority.
+
+Usage of stars
+----
+see stars(1) and stars -h to get some information about usage. if you're unsure of where to start, the usage pattern of stars will probably resemble the following:
+
+1.	if you aren't already acquainted with astrological concepts, read the entire included set of wiki pages. you can get a list of pages with:
+		stars -i
+	and then you can read each page with:
+		stars -i [page name] 
+2.	figure out your birth time, latitude, and longitude, and then create a profile for yourself with stars -b
+	as an example of how to do this, let's take me! i was born at 9:24 AM on July 23, 1999 in Puyallup, WA (plan 9 timezone US_Pacific) and i'm a straight woman. having looked up the coordinates of my birth town, i would produce my birth chart with:
+		stars -b -d 07/23/1999 -t 09:24:30 -l 47.1758333,-122.2936111 -z US_Pacific -g FM lyndsay
+	if i was born in the same timezone as my computer is set to and i don't care about gender or partner preference, i can also just do the simpler:
+		stars -b -d 07/23/2004 -t 09:24:30 -l 47.1758333,-122.2936111 lyndsay
+3.	after creating your profile and taking a gander at your birth chart, you might get your current horoscope:
+		stars -H lyndsay
+	or maybe you want to take a look at horoscopes for the past couple of days (assuming it's Oct 4, 2021, which is when i wrote this):
+		stars -H -d 10/01/2021,10/02/2021,10/03/2021,10/04/2021 lyndsay
+	you can also get a horoscope the first time you open a terminal each day:
+		cat >>$home/lib/profile<<EOF
+		stars -HT lyndsay
+		EOF
+4. you can continue to check horoscopes and the status of astral bodies, and add new profiles as you so desire using the manual and help. the sky is the limit! :P
+
+Usage of libstars
+----
+libstars contains all the internal functions and definitions stars uses and more. see the header files in stars/include, which are for the most part very simple, for a list of functions provided by libstars.
+
+Keep in mind
+----
+we use simple formulas for astrological/astronomical calculations. The accuracy of the calculations in libstars should suffice for basic birth charts and simple astronomical plotting, but they should not be relied on where precise measurements are necessary. 
+
+birth charts should largely be reliable for living and recently-deceased people. birthdays between 1900 and 2100 should have no problem. birthdays outside of this range *may* have issues with uranus and neptune placements. 
+
+cusps within 1/60 of a degree may not be accurate; that is the degree of precision offered by these calculations. The program will alert the user via stderr if a cusp within 5/60 (0.125) degrees is detected when calculating a birth chart.
+
+only sidereal calculations with the Placidus house system are provided. Future updates may implement tropical astrology and other house systems, but this is by no means guaranteed.
+
+Translation
+----
+i plan to do a russian translation at some point, but right now stars is only available in english. i have, however, made everything extremely localizable - all of the text output by the program except for the wiki pages is located in stars/include/starsl10n.h, and changing the preprocessor definitions there and the contents (and names, if you wish) of the pages in stars/info/* is all you need to do to translate the program for users. everything is in runes so you shouldn't have issues with encoding, even if you translate into something a bit "out there." so if you like the program and know another language besides english, i would love translation contributions!
+
+Contact
+----
+patches (and inquiries, if you've double checked every information source and can't find an answer) can be emailed to lyndsay@vivaldi.net.

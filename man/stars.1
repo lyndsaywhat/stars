@@ -1,0 +1,204 @@
+.TH STARS 1
+.SH NAME
+stars \- perform astrological functions
+.SH SYNOPSIS
+.B stars
+[
+.B -dtz
+]
+.I planet
+.BR
+ 
+.BR
+.B stars -b
+[
+.B -dglqtvz
+]
+.I profile-name
+.BR
+ 
+.BR
+.B stars -H
+[
+.B -1dz
+]
+.I profile-name
+.BR
+ 
+.BR
+.B stars -i
+.I (page)
+
+.SH DESCRIPTION
+.I Stars
+provides a suite of astrological tools, aiming to produce a much cheaper equivalent of consulting a professional astrologer. 
+There are four different modes available: planetary mode, profile mode, horoscope mode, and wiki mode (
+respectively with the options listed in the 
+.B SYNOPSIS
+).
+.BR
+ 
+.BR
+The following (case sensitive) are valid values for
+.I planet:
+.BR
+ 
+.BR
+.B su[n], ea[rth]
+- (geocentric) Sun
+.BR
+ 
+.BR
+.B mo[on]
+- (geocentric) Moon
+.BR
+ 
+.BR
+.B me[rcury]
+- (heliocentric) Mercury
+.BR
+ 
+.BR
+.B ve[nus]
+- (heliocentric) Venus
+.BR
+ 
+.BR
+.B ma[rs]
+- (heliocentric) Mars
+.BR
+ 
+.BR
+.B ju[piter]
+- (heliocentric) Jupiter
+.BR
+ 
+.BR
+.B sa[turn]
+- (heliocentric) Saturn
+.BR
+ 
+.BR
+.B ur[anus]
+- (heliocentric) Uranus
+.BR
+ 
+.BR
+.B ne[ptune]
+- (heliocentric) Neptune
+.BR
+ 
+.BR
+.B pl[uto]
+- (heliocentric) Pluto
+.BR
+
+.BR
+Only the first two characters of any body are necessary, and everything after them will be accepted but ignored.
+.BR
+ 
+.BR
+In planet mode,
+.I stars
+will produce all active transits for an astral body, what sign and house it is in, and additional characteristics. It takes a valid
+.I planet
+as an argument.
+It can also use the flags
+.B -d, -t
+and
+.B -z
+in order to look at a body on a particular time rather than right now.
+.B -z
+can specify the time zone the time is being provided in, as an argument. 
+This will default to the computer's time zone. 
+This option is unnecessary unless you specify 
+.B -d
+and/or 
+.B -t.
+.B -d
+should take a date in the form of MM/DD/YYYY. 
+This should be the date in the specified time zone.
+This defaults to
+.I tmnow(2).
+.B -t
+should take a time in the form of HH:MM:SS.
+The seconds cannot be omitted.
+.BR
+ 
+.BR
+In profile mode,
+.I stars
+creates a profile for a user and provides the user's birth chart. 
+Provided data is stored in /lib/stars/profile/[name] and can be reused to reproduce the birth chart or produce individual horoscopes.
+Here,
+.I stars
+takes the flags [
+.B -dglqQtvz
+].
+.B -d
+.B -t
+and
+.B -z
+require the same input format and have the same defaults as in planet mode, but here indicate the date, time, and timezone of birth (respectively) for the profile.
+.B -l
+indicates the latitude and longitude of birth and should be in the format
+.B -l
+LATITUDE,LONGITUDE.
+The latitude and longitude need to be in decimal format, not degrees/minutes/seconds. The default is the equator and prime meridian.
+.BR
+ 
+.BR
+.B -g
+takes an argument of the form [NMF][NMF], indicating the pronouns to be used by the program in referring to the person represented by the profile and prospective partners thereof.
+N means neutral ("they").
+The default is NN.
+.BR
+ 
+.BR
+.B -q,
+.B -Q,
+and
+.B -v
+control the amount of output given by
+.I stars -b:
+.B -Q
+suppresses all output entirely,
+.B -q
+gives only the Sun, moon, and rising signs for the profile, and
+.B -v
+gives additional information for the profile, including signs for houses, Lilith (dark moon), Ceres, Chiron, and Eris.
+.BR
+ 
+.BR
+In horoscope mode (
+.I stars -H
+),
+.I stars
+will output relevant transits and associated horoscopes for a profile (whose name should be given as input).
+This takes
+.B -dz
+flags exactly like in planet mode.
+It also takes the
+.B -1
+flag, where it will produce a horoscope only if the profile has not received one already today (useful for automation).
+With the
+.B -n
+flag, given a number, the number of horoscopes produced will not exceed that number.
+.BR
+ 
+.BR
+In wiki mode,
+.I stars -i
+can be used to read pages of information about astrological concepts.
+It is intended to provide introductory information for beginners in astrology to learn about everything necessary to understand the program's output, and does not span the entire breadth of astrological knowledge.
+Without an argument, it will produce a list of possible pages, and to read pages, a page name can be passed as the argument.
+The pages are in Troff format, resembling manual pages, and can be found in /lib/stars/info.
+The wiki categories are:
+.BR
+ 
+.BR
+1 : Broad concepts
+2 : More specific general concepts
+3 : Understanding horoscopes and planetary positions
+4 : Zodiac signs
+5 : Planets and placements

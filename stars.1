@@ -1,0 +1,145 @@
+.TH STARS 1
+.SH NAME
+stars \- perform astrological functions
+.SH SYNOPSIS
+.B stars
+[
+.B -dtz
+]
+.I planet
+.br
+.br
+.B stars -b
+[
+.B -dglqtvz
+]
+.I profile-name
+.br
+.br
+.B stars -H
+[
+.B -dz
+]
+.I profile-name
+.br
+.br
+.B stars -i
+.I (page)
+
+.SH DESCRIPTION
+.I Stars
+provides a suite of astrological tools, aiming to produce a much cheaper equivalent of consulting a professional astrologer. 
+There are four different modes available: planetary mode, profile mode, horoscope mode, and wiki mode (
+respectively with the options listed in the 
+.B SYNOPSIS
+).
+.br
+.br
+The following (case sensitive) are valid values for
+.I planet:
+.br
+.br
+.B su[n], ea[rth]
+- (geocentric) Sun
+.br
+.br
+.B mo[on]
+- (geocentric) Moon
+.br
+.br
+.B me[rcury]
+- (heliocentric) Mercury
+.br
+.br
+.B ve[nus]
+- (heliocentric) Venus
+.br
+.br
+.B ma[rs]
+- (heliocentric) Mars
+.br
+.br
+.B ju[piter]
+- (heliocentric) Jupiter
+.br
+.br
+.B sa[turn]
+- (heliocentric) Saturn
+.br
+.br
+.B ur[anus]
+- (heliocentric) Uranus
+.br
+.br
+.B ne[ptune]
+- (heliocentric) Neptune
+.br
+.br
+.B pl[uto]
+- (heliocentric) Pluto
+.br
+.br
+.B er[is]
+- (heliocentric) Eris
+.br
+.br
+.B ce[res]
+- (heliocentric) Ceres
+.br
+.br
+.B ch[iron]
+- (heliocentric) Chiron
+.br
+.br
+Only the first two characters of any body are necessary, and everything after them will be accepted but ignored.
+.br
+.br
+In planet mode,
+.I stars
+will produce all active transits for an astral body, what sign and house it is in, and additional characteristics. It takes a valid
+.I planet
+as an argument.
+It can also use the flags
+.B -d, -t
+and
+.B -z
+in order to look at a body on a particular time rather than right now.
+.B -z
+can specify the time zone the time is being provided in, as an argument. 
+This will default to the computer's time zone. 
+This option is unnecessary unless you specify 
+.B -d
+and/or 
+.B -t.
+.B -d
+should take a date in the form of MM/DD/YYYY. 
+This should be the date in the specified time zone.
+This defaults to 
+.I tmnow(2).
+.B -t
+should take a time in the form of HH:MM:SS.
+The seconds cannot be omitted.
+.br
+ 
+.br
+In profile mode,
+.I stars
+creates a profile for a user and provides the user's birth chart. 
+Provided data is stored in /lib/stars/profile/[name] and can be reused to reproduce the birth chart or produce individual horoscopes.
+Here,
+.I stars
+takes the arguments [
+.B -dglqtvz
+].
+.B -d
+.B -t
+and
+.B -z
+require the same input format and have the same defaults as in planet mode, but here indicate the date, time, and timezone of birth (respectively) for the profile.
+.B -l
+indicates the latitude and longitude of birth and should be in the format
+.B -l
+LATITUDE,LONGITUDE.
+The latitude and longitude need to be in decimal format, not degrees/minutes/seconds. The default is the equator and prime meridian.
+.B -g
+takes an argument of the form [NMF][NMF], indicating the pronouns to be used by the program in referring to the person represented by the profile and prospective partners thereof. N means neutral ("they"). The default is NN.
