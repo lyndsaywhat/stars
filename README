@@ -38,7 +38,7 @@ see stars(1) and stars -h to get some information about usage. if you're unsure 
 	as an example of how to do this, let's take me! i was born at 9:24 AM on July 23, 1999 in Puyallup, WA (plan 9 timezone US_Pacific) and i'm a straight woman. having looked up the coordinates of my birth town, i would produce my birth chart with:
 		stars -b -d 07/23/1999 -t 09:24:30 -l 47.1758333,-122.2936111 -z US_Pacific -g FM lyndsay
 	if i was born in the same timezone as my computer is set to and i don't care about gender or partner preference, i can also just do the simpler:
-		stars -b -d 07/23/2004 -t 09:24:30 -l 47.1758333,-122.2936111 lyndsay
+		stars -b -d 07/23/1999 -t 09:24:30 -l 47.1758333,-122.2936111 lyndsay
 3.	after creating your profile and taking a gander at your birth chart, you might get your current horoscope:
 		stars -H lyndsay
 	or maybe you want to take a look at horoscopes for the past couple of days (assuming it's Oct 4, 2021, which is when i wrote this):
