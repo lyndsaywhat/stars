@@ -274,18 +274,18 @@ bchart(char *t, uint d, uint m, uint y, double lat, double lng, Sex *ps, Sex *us
 					lng=atoi(rconts);
 					break;
 				case 'P':
-					if(rconts==Sex.moid->cname)
-						ps=Sex.moid;
-					else if(rconts==Sex.broad->cname)
-						ps=Sex.broad;
+					if(rconts==Sex.male->cname)
+						ps=Sex.male;
+					else if(rconts==Sex.female->cname)
+						ps=Sex.female;
 					else
 						ps=Sex.dontcare;
 					break;
 				case 'U':
-					if(rconts==Sex.moid->cname)
-						us=Sex.moid;
-					else if(rconts==Sex.broad->cname)
-						us=Sex.broad;
+					if(rconts==Sex.male->cname)
+						us=Sex.male;
+					else if(rconts==Sex.female->cname)
+						us=Sex.female;
 					else
 						us=Sex.dontcare;
 					break;

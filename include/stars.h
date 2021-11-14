@@ -311,7 +311,7 @@ typedef struct sex{
 		.possn=	SEXN_POSSN,
 		.possp=	SEXN_POSSP
 	};
-	struct sex *broad={
+	struct sex *female={
 		.cname=	SEXF_CNAME,
 		.nom=	SEXF_NOM  ,
 		.acc=	SEXF_ACC  ,
@@ -323,7 +323,7 @@ typedef struct sex{
 		.possn=	SEXF_POSSN,
 		.possp=	SEXF_POSSP
 	};
-	struct sex *moid={
+	struct sex *male={
 		.cname=	SEXM_CNAME,
 		.nom=	SEXM_NOM  ,
 		.acc=	SEXM_ACC  ,

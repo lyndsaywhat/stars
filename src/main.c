@@ -1,12 +1,9 @@
-#include "bc.h"
-#include "starsl10n.h"
-#include "stars.h"
-#include "transit.h"
-#include "wiki.h"
-
 #include <u.h>
 #include <libc.h>
 #include <string.h>
+
+#include "starsl10n.h"
+#include "stars.h"
 
 int mode; /* 0 = planet status, 1 = create profile, 2 = horoscope, 3 = wiki */
 Tzone *tz;
@@ -73,10 +70,10 @@ main(int argc, char *argv[])
 									usex=Sex.dontcare;
 									break;
 								case 'F':
-									usex=Sex.broad;
+									usex=Sex.female;
 									break;
 								case 'M':
-									usex=Sex.moid;
+									usex=Sex.male;
 									break;
 								default:
 									sysfatal(ERROR_GENDERFMT);
@@ -87,10 +84,10 @@ main(int argc, char *argv[])
 									psex=Sex.dontcare;
 									break;
 								case 'F':
-									psex=Sex.broad;
+									psex=Sex.female;
 									break;
 								case 'M':
-									psex=Sex.moid;
+									psex=Sex.male;
 									break;
 								default:
 									sysfatal(ERROR_GENDERFMT);

@@ -1,3 +1,5 @@
+#include "stars.h"
+
 int
 matchestr(double pstart, double pnow, Trtype *t, int major){
     double omin, omax;
@@ -26,7 +28,7 @@ rawtransits(Planet *birthplanets[], double d){
     double *cloc=&cl;
     Transit t;
     Transit **out;
-    int mat, maj, tn;
+    int mat, maj, tn, m;
     tn=0;
     for(int i=0;i<bn;i++){
         *bloc=getloc(birthplanets[i]);
@@ -36,7 +38,7 @@ rawtransits(Planet *birthplanets[], double d){
                 maj=1;
             else
                 maj=0;
-            for(int k=0;k<transitn;k++){
+            for(int k=0;k<7;k++){
                 if((m=matchestr(*bloc, *cloc, trtypes[k], maj))==1){
                     t={
                         .type=trtypes[k],
@@ -67,7 +69,7 @@ sorttransits(Transit **){
 
 int
 iscazimi(Transit *tr){
-    if(tr.orb < 0.28)
+    if(tr->orb < 0.28)
         return 1;
     else
         return 0;
