@@ -38,7 +38,7 @@ see stars(1) and stars -h to get some information about usage. if you're unsure 
 	as an example of how to do this, let's take me! i was born at 9:24 AM on July 23, 1999 in Puyallup, WA (plan 9 timezone US_Pacific) and i'm a straight woman. having looked up the coordinates of my birth town, i would produce my birth chart with:
 		stars -b -d 07/23/1999 -t 09:24:30 -l 47.1758333,-122.2936111 -z US_Pacific -g FM lyndsay
 	if i was born in the same timezone as my computer is set to and i don't care about gender or partner preference, i can also just do the simpler:
-		stars -b -d 07/23/2004 -t 09:24:30 -l 47.1758333,-122.2936111 lyndsay
+		stars -b -d 07/23/1999 -t 09:24:30 -l 47.1758333,-122.2936111 lyndsay
 3.	after creating your profile and taking a gander at your birth chart, you might get your current horoscope:
 		stars -H lyndsay
 	or maybe you want to take a look at horoscopes for the past couple of days (assuming it's Oct 4, 2021, which is when i wrote this):
@@ -62,10 +62,6 @@ birth charts should largely be reliable for living and recently-deceased people.
 cusps within 1/60 of a degree may not be accurate; that is the degree of precision offered by these calculations. The program will alert the user via stderr if a cusp within 5/60 (0.125) degrees is detected when calculating a birth chart.
 
 only sidereal calculations with the Placidus house system are provided. Future updates may implement tropical astrology and other house systems, but this is by no means guaranteed.
-
-Translation
-----
-i plan to do a russian translation at some point, but right now stars is only available in english. i have, however, made everything extremely localizable - all of the text output by the program except for the wiki pages is located in stars/include/starsl10n.h, and changing the preprocessor definitions there and the contents (and names, if you wish) of the pages in stars/info/* is all you need to do to translate the program for users. everything is in runes so you shouldn't have issues with encoding, even if you translate into something a bit "out there." so if you like the program and know another language besides english, i would love translation contributions!
 
 Contact
 ----
