@@ -142,7 +142,7 @@ Written by lyndsay <lyndsay@vivaldi.net> for 9front. MIT license.\n"
 #define URANUS 			L"уран"
 #define NEPTUNE			L"нептун"
 #define PLUTO			L"плутон"
-#define TNODE 			L"правыльный узел" /* double check this one */
+#define TNODE 			L"восходящий узел" /****/
 
 #define ARIES			L"овен"
 #define TAURUS			L"телец"
