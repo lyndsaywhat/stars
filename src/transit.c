@@ -63,7 +63,7 @@ transitweight(Transit *t){
 }
 
 void
-sorttransits(Transit **){
+sorttransits(Transit **t){
     
 }
 

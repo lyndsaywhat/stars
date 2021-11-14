@@ -1,7 +1,7 @@
 #ifndef STARSL10N_H
 #define STARSL10N_H
 
-/* change the definitions in this file and the text in files in stars/info/* to translate program */
+#ifdef ENGLISH
 
 #define SUN 			L"sun"
 #define MOON 			L"moon"
@@ -10,13 +10,12 @@
 #define MERCURY			L"mercury"
 #define VENUS 			L"venus"
 #define MARS 			L"mars"
-#define CERES			L"ceres"
 #define JUPITER		    L"jupiter"
 #define SATURN 			L"saturn"
 #define URANUS 			L"uranus"
-#define CHIRON			L"chiron"
 #define NEPTUNE			L"neptune"
 #define TNODE 			L"true node"
+#define PLUTO			L"pluto"
 
 #define ARIES			L"aries"
 #define TAURUS			L"taurus"
@@ -104,11 +103,6 @@
 	   stars -b [-dglqQtvz] [name]\n\
 	   stars -H [-1dz] [name]\n\
 	   stars -i (query)\n"
-#define PROGUSAGE_RU	L"пользование:	stars -H [профиль]\n\
-		stars [-dtz] [астральное тело]\n\
-		stars -b [-dglqQtvz] [имя]\n\
-		stars -H [-1dnz] [имя]\n\
-		stars -i (вопрос)\n"
 #define PROGHELP		L"\
 Arguments:\n\
 	-1					With -H, only output a horoscope if you have not already gotten one today.\n\
@@ -133,5 +127,135 @@ Written by lyndsay <lyndsay@vivaldi.net> for 9front. MIT license.\n"
 #define ERROR_TIMEFMT		L"incorrect time format"
 #define ERROR_TIMEZONE		L"timezone error"
 #define ERROR_USAGE			L"unrecognized flag"
+
+#elif defined(RUSSIAN)
+
+#define SUN 			L"солнце"
+#define MOON 			L"луна"
+#define RISING 			L"?"
+#define ASCENDANT		L"?"
+#define MERCURY			L"меркурий"
+#define VENUS 			L"венера"
+#define MARS 			L"марс"
+#define JUPITER		    L"юпитер"
+#define SATURN 			L"сатурн"
+#define URANUS 			L"уран"
+#define NEPTUNE			L"нептун"
+#define PLUTO			L"плутон"
+#define TNODE 			L"правыльный узел" /* double check this one */
+
+#define ARIES			L"овен"
+#define TAURUS			L"телец"
+#define GEMINI			L"близнецы"
+#define CANCER			L"рак"
+#define LEO				L"лев"
+#define VIRGO			L"дева"
+#define LIBRA			L"весы"
+#define SCORPIO			L"скорпион"
+#define SAGITTARIUS		L"стрелец"
+#define CAPRICORN		L"козерог"
+#define AQUARIUS		L"водолей"
+#define PISCES			L"рыбы"
+
+#define FIRE			L"fire"
+#define EARTH			L"earth"
+#define AIR				L"air"
+#define WATER			L"water"
+
+#define MUTABLE			L"mutable"
+#define CARDINAL		L"cardinal"
+#define FIXED			L"fixed"
+
+#define CONJUNCTION		L"соединение"
+#define SEXTILE			L"секстиль"
+#define SQUARE			L"квадрат"
+#define TRINE			L"тригон"
+#define OPPOSITION		L"оппозиция"
+#define QUINCUNX		L"квиконс"
+#define SEMISEXTILE		L"семисекстиль"
+
+#define HOUSE			L"дом"
+#define ONESUFF			L"-й"
+#define TWOSUFF			L"-й"
+#define THREESUFF		L"-й"
+#define NTHSUFF			L"-й"
+
+#define SEXN_CNAME		L"нет"
+#define SEXF_CNAME		L"женский род"
+#define SEXM_CNAME		L"мужской род"
+
+#define SEXN_NOM		L"он"
+#define SEXF_NOM		L"она"
+#define SEXM_NOM		L"он"
+
+#define SEXN_ACC		L"его"
+#define SEXF_ACC		L"её"
+#define SEXM_ACC		L"его"
+
+#define SEXN_DAT		L"ему"
+#define SEXF_DAT		L"ей"
+#define SEXM_DAT		L"ему"
+
+#define SEXN_GEN		L"его"
+#define SEXF_GEN		L"её"
+#define SEXM_GEN		L"его"
+
+#define SEXN_INST		L"с нем"
+#define SEXF_INST		L"с ней"
+#define SEXM_INST		L"с нем"
+
+#define SEXN_POSSM		L"его"
+#define SEXF_POSSM		L"её"
+#define SEXM_POSSM		L"его"
+
+#define SEXN_POSSF		L"его"
+#define SEXF_POSSF		L"её"
+#define SEXM_POSSF		L"его"
+
+#define SEXN_POSSN		L"его"
+#define SEXF_POSSN		L"её"
+#define SEXM_POSSN		L"его"
+
+#define SEXN_POSSP		L"его"
+#define SEXF_POSSP		L"её"
+#define SEXM_POSSP		L"его"
+
+#define BIRTHCHARTFOR	L"Расчет натальной карты"
+#define BORNAT			L"родился/родилась"
+#define L_ON			L"в"
+
+#define PROGUSAGE		L"пользование:	stars -H [профиль]\n\
+		stars [-dtz] [астральное тело]\n\
+		stars -b [-dglqQtvz] [имя]\n\
+		stars -H [-1dnz] [имя]\n\
+		stars -i (вопрос)\n"
+
+/* need to translate these */
+#define PROGHELP		L"\
+Arguments:\n\
+	-1					With -H, only output a horoscope if you have not already gotten one today.\n\
+	-b					Add a new astrological profile and output birth chart.\n\
+	-d MM/DD/YYYY		With -b, sets the date of birth for the new profile. Otherwise, provides information for a particular date instead of today.\n\
+	-g [F/M/N][F/M/N]	With -b, set the gender of the profile and the gender of preferred partners respectively (female-male-neutral/don\'t care).\n\
+	-h					Show this help.\n\
+	-H					Get current transits and horoscope for a particular profile.\n\
+	-i (TOPIC)			Get information about TOPIC (there are many topics relating to astrology). If no topic is specified, list possible topics.\n\
+	-l LAT,LONG			With -b, set the latitude and longitude of birth for the new profile.\n\
+	-q					With -b, produce a quiet birth chart summary, with just Sun, Moon, Rising, Mercury, Mars, and Venus.\n\
+	-Q					With -b, produce no output at all, only store a profile.\n\
+	-t HH:MM:SS			With -b, set the time of birth for the new profile. Otherwise, set the time of day for the function being performed.\n\
+	-v					With -b, produce a verbose birth chart (including all houses, true node, dark moon/Lilith, Eris, Ceres, and Chiron).\n\
+	-z TIMEZONE			Interpret and print all times in TIMEZONE instead of local time.\n\
+Written by lyndsay <lyndsay@vivaldi.net> for 9front. MIT license.\n"
+
+#define ERROR_ARGUMENT		L"wrong number of arguments (see stars(1) or enter stars -h)"
+#define ERROR_GENDERFMT		L"not a recognized -g argument"
+#define ERROR_NOWIKI		L"no wiki appears to be installed"
+#define ERROR_PERMISSIONS	L"cannot access file (do you have the right permissions?)"
+#define ERROR_TIMEFMT		L"incorrect time format"
+#define ERROR_TIMEZONE		L"timezone error"
+#define ERROR_USAGE			L"unrecognized flag"
+
+#endif
 
 #endif
