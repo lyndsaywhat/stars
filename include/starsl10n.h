@@ -233,28 +233,28 @@ Written by lyndsay <lyndsay@vivaldi.net> for 9front. MIT license.\n"
 /* need to translate these */
 #define PROGHELP		L"\
 Arguments:\n\
-	-1					With -H, only output a horoscope if you have not already gotten one today.\n\
-	-b					Add a new astrological profile and output birth chart.\n\
-	-d MM/DD/YYYY		With -b, sets the date of birth for the new profile. Otherwise, provides information for a particular date instead of today.\n\
-	-g [F/M/N][F/M/N]	With -b, set the gender of the profile and the gender of preferred partners respectively (female-male-neutral/don\'t care).\n\
-	-h					Show this help.\n\
-	-H					Get current transits and horoscope for a particular profile.\n\
-	-i (TOPIC)			Get information about TOPIC (there are many topics relating to astrology). If no topic is specified, list possible topics.\n\
-	-l LAT,LONG			With -b, set the latitude and longitude of birth for the new profile.\n\
-	-q					With -b, produce a quiet birth chart summary, with just Sun, Moon, Rising, Mercury, Mars, and Venus.\n\
-	-Q					With -b, produce no output at all, only store a profile.\n\
-	-t HH:MM:SS			With -b, set the time of birth for the new profile. Otherwise, set the time of day for the function being performed.\n\
-	-v					With -b, produce a verbose birth chart (including all houses, true node, dark moon/Lilith, Eris, Ceres, and Chiron).\n\
-	-z TIMEZONE			Interpret and print all times in TIMEZONE instead of local time.\n\
-Written by lyndsay <lyndsay@vivaldi.net> for 9front. MIT license.\n"
+    -1                    Вместе с -H, показать гороскоп только в том случае, если вы еще не получили его сегодня.\n\
+    -b                    Добавить новый астрологический профиль и вывести карту рождения.\n\
+    -d ММ/ДД/ГГГГ         Вместе с -b, устанавливить дату рождения для нового профиля. В противном случае предоставить информацию на конкретную дату вместо сегодняшнего дня.\n\
+    -g [F/M/N][F/M/N]     Вместе с -b, установить пол профиля и пол предпочтительных партнеров соответственно (женщина-мужчина-нейтральный / безразлично).\n\
+    -h                    Показать эту помощь.\n\
+    -H                    Получить текущие транзиты и гороскоп для определенного профиля.\n\
+    -i (ТЕМА)             Получить информацию на TЕМУ (есть много тем, связанных с астрологией). Если тема не указана, перечислить возможные темы.\n\
+    -l ШИРОТА,ДОЛГОТА     Вместе с -b, установить широту и долготу рождения для нового профиля.\n\
+    -q                    Вместе с -b, создать краткую сводку карты рождения, состоящую только из Солнца, Луны, Восхода, Меркурия, Марса и Венеры.\n\
+    -Q                    Вместе с -b, сохранить профиль, без вывода.\n\
+    -t ЧЧ:ММ:СС           Вместе с -b, установить время рождения для нового профиля. В противном случае установить время дня для выполняемой функции.\n\
+    -v                    Вместе с -b, составить подробную карту рождения (включая все дома, истинный узел, темную луну / Лилит, Эрис, Цереру и Хирон).\n\
+    -z ЧАСОВОЙ_ПОЯС       Все время переводить и печатать в ЧАСОВОМ_ПОЯСЕ, а не по местному времени.\n\
+Создано lyndsay <lyndsay@vivaldi.net> для 9front. Лицензия распростронения: MIT.\n"
 
-#define ERROR_ARGUMENT		L"wrong number of arguments (see stars(1) or enter stars -h)"
-#define ERROR_GENDERFMT		L"not a recognized -g argument"
-#define ERROR_NOWIKI		L"no wiki appears to be installed"
-#define ERROR_PERMISSIONS	L"cannot access file (do you have the right permissions?)"
-#define ERROR_TIMEFMT		L"incorrect time format"
-#define ERROR_TIMEZONE		L"timezone error"
-#define ERROR_USAGE			L"unrecognized flag"
+#define ERROR_ARGUMENT		L"неправильное количество параметров (см. stars(1) или введите stars -h)"
+#define ERROR_GENDERFMT		L"непонятный -g параметр"
+#define ERROR_NOWIKI		L"вики не установлено"
+#define ERROR_PERMISSIONS	L"нет доступа к файлу"
+#define ERROR_TIMEFMT		L"неправильный формат времени"
+#define ERROR_TIMEZONE		L"ошибка в часовом поясе"
+#define ERROR_USAGE			L"неопознанный флажок"
 
 #endif
 
