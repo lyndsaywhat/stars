@@ -159,8 +159,8 @@ Written by lyndsay <lyndsay@vivaldi.net> for 9front. MIT license.\n"
 
 #define FIRE			L"fire"
 #define EARTH			L"earth"
-#define AIR				L"air"
-#define WATER			L"water"
+#define AIR				L"духа"
+#define WATER			L"вода"
 
 #define MUTABLE			L"mutable"
 #define CARDINAL		L"cardinal"
